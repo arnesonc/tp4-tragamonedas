@@ -8,11 +8,10 @@ public class Tragamonedas {
 	
 	
 	public Tragamonedas() {
-		NumberGenerator generator1 = new FixNumberGenerator(1);
-		NumberGenerator generator2 = new RandomNumberGenerator();
-		this.tambor1 = new Tambor(generator2);
-		this.tambor2 = new Tambor(generator2);
-		this.tambor3 = new Tambor(generator2);
+		NumberGenerator generator1 = new FixNumberGenerator(7);
+		this.tambor1 = new Tambor(generator1);
+		this.tambor2 = new Tambor(generator1);
+		this.tambor3 = new Tambor(generator1);
 	}
 	
 	public void activar() {
@@ -22,15 +21,10 @@ public class Tragamonedas {
 	}
 	
 	public Boolean entregarPremio() {
-		System.out.println("Valor del tambor 1: " + this.tambor1.getPosicion());
-		System.out.println("Valor del tambor 2: " + this.tambor2.getPosicion());
-		System.out.println("Valor del tambor 3: " + this.tambor3.getPosicion());
 		if (this.tambor1.getPosicion() == this.tambor2.getPosicion() &&
 				this.tambor2.getPosicion() == this.tambor3.getPosicion()) {
-			System.out.println("¡GANASTE!");
 			return true;
 		} else {
-			System.out.println("perdiste...");
 			return false;
 		}
 	}

@@ -7,6 +7,7 @@ public class Tambor {
 	
 	public Tambor(NumberGenerator generator) {
 		this.generator = generator;
+		this.posicion = 1;
 	}
 	
 	public Integer getPosicion() {
